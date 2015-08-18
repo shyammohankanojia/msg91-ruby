@@ -9,16 +9,13 @@ This gem is just return gift to MSG91
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'msg91'
+gem 'msg91', :github => 'shyammohankanojia/msg91-ruby'
 ```
 
 And then execute:
 
     $ bundle
 
-Or install it yourself as:
-
-    $ gem install msg91
 
 ## Usage
 This gem has one dependency, so add this in your Gemfile
