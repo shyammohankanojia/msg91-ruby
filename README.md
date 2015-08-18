@@ -29,20 +29,30 @@ After installing the gem you need to get following API access
 http://api.msg91.com/apidoc/textsms/send-sms.php
 
 authkey, sender, route && country for MSG91 API is required.
+
 Set there var in your system ENV file.
 
 authkey = ENV['SMSAUTHKEY']
+
 sender  = ENV['SENDER']
+
 route   = ENV['ROUTE']
+
 country = ENV['COUNTRY']
 
 authkey * Alphanumeric  Login Authentication Key(This key is unique for every user)
+
 message * Varchar Message Content to send
+
 sender *  Varchar Receiver will see this as sender's ID
-route * Varchar If your operator supports multiple routes then give one route name. Eg: route=1 for promotional, route=4 for transactional SMS.
+
+route * Varchar If your operator supports multiple routes then give one route name. 
+
+Eg: route=1 for promotional, route=4 for transactional SMS.
 
 -------------------------------------------
 How to send sms?
+
 After setting ENV vars, call following in anywhere to send sms.
 
 Msg91::Client.text(mobile_number, message)
