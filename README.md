@@ -1,8 +1,8 @@
 # Msg91
+Msg91 is the basic ruby gem for https://msg91.com/ to send sms.
+I tried to provide in ruby, sinse Msg91 did not have any support in ruby.
+This gem is just return gift to MSG91
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/msg91`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
 
 ## Installation
 
@@ -21,8 +21,32 @@ Or install it yourself as:
     $ gem install msg91
 
 ## Usage
+This gem has one dependency, so add this in your Gemfile
 
-TODO: Write usage instructions here
+gem 'excon'
+
+After installing the gem you need to get following API access 
+http://api.msg91.com/apidoc/textsms/send-sms.php
+
+authkey, sender, route && country for MSG91 API is required.
+Set there var in your system ENV file.
+
+authkey = ENV['SMSAUTHKEY']
+sender  = ENV['SENDER']
+route   = ENV['ROUTE']
+country = ENV['COUNTRY']
+
+authkey * Alphanumeric  Login Authentication Key(This key is unique for every user)
+message * Varchar Message Content to send
+sender *  Varchar Receiver will see this as sender's ID
+route * Varchar If your operator supports multiple routes then give one route name. Eg: route=1 for promotional, route=4 for transactional SMS.
+
+-------------------------------------------
+How to send sms?
+After setting ENV vars, call following in anywhere to send sms.
+
+Msg91::Client.text(mobile_number, message)
+
 
 ## Development
 
